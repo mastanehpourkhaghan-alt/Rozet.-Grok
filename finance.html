@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROZET — سیستم مالی</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            rozet: {
+              bg: '#0F0F0F',
+              card: '#1A1A1A',
+              border: '#2A2A2A',
+              gold: '#C9A86C',
+              burgundy: '#520817',
+              text: '#F5F5F0',
+              muted: '#A0A0A0'
+            }
+          },
+          fontFamily: { sans: ['Vazirmatn', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #0F0F0F; color: #F5F5F0; font-family: 'Vazirmatn', system-ui, sans-serif; }
+    .card { background: #1A1A1A; border: 1px solid #2A2A2A; border-radius: 16px; }
+    .gold-text { color: #C9A86C; }
+    .nav-item.active { background: rgba(82, 8, 23, 0.35); color: #C9A86C; border-right: 3px solid #520817; }
+    .badge { font-size: 11px; padding: 2px 8px; border-radius: 9999px; }
+    .tab-btn.active { background: rgba(82, 8, 23, 0.35); color: #C9A86C; border-bottom: 2px solid #520817; }
+  </style>
+</head>
+<body class="min-h-screen flex">
+
+  <aside class="w-64 bg-[#141414] border-l border-[#2A2A2A] flex flex-col fixed h-full z-20">
+    <div class="p-6 border-b border-[#2A2A2A]">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#C9A86C] to-[#A68B4B] flex items-center justify-center text-black font-bold text-lg">R</div>
+        <div>
+          <h1 class="font-bold text-lg tracking-wide">ROZET</h1>
+          <p class="text-xs text-rozet-muted">Management System</p>
+        </div>
+      </div>
+    </div>
+    <nav class="flex-1 p-4 space-y-1">
+      <a href="index.html" class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-rozet-muted hover:bg-[#1F1F1F] hover:text-white">داشبورد</a>
+      <a href="products.html" class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-rozet-muted hover:bg-[#1F1F1F] hover:text-white">محصولات</a>
+      <a href="crm.html" class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-rozet-muted hover:bg-[#1F1F1F] hover:text-white">مشتریان (CRM)</a>
+      <a href="orders.html" class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-rozet-muted hover:bg-[#1F1F1F] hover:text-white">سفارش‌ها</a>
+      <a href="finance.html" class="nav-item active flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium">سیستم مالی</a>
+    </nav>
+    <div class="p-4 border-t border-[#2A2A2A] text-xs text-rozet-muted text-center">نسخه ۱.۰ — Local</div>
+  </aside>
+
+  <main class="flex-1 mr-64 min-h-screen">
+    <header class="sticky top-0 z-10 bg-[#0F0F0F]/90 backdrop-blur-md border-b border-[#2A2A2A] px-8 py-4 flex items-center justify-between">
+      <div>
+        <h2 class="text-xl font-semibold">سیستم مالی</h2>
+        <p class="text-sm text-rozet-muted mt-0.5">داده‌های واقعی از فایل Rozet.xlsx</p>
+      </div>
+      <div class="flex gap-3">
+        <button class="bg-[#1A1A1A] border border-[#2A2A2A] text-sm px-4 py-2.5 rounded-xl">+ ثبت هزینه</button>
+        <button class="bg-rozet-gold text-black font-medium px-5 py-2.5 rounded-xl text-sm">+ ثبت درآمد</button>
+      </div>
+    </header>
+
+    <div class="p-8 space-y-6">
+
+      <!-- Summary -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="card p-5">
+          <p class="text-sm text-rozet-muted mb-1">کل هزینه ثبت‌شده</p>
+          <p class="text-2xl font-bold text-red-400">۷,۸۷۳,۲۰۰</p>
+        </div>
+        <div class="card p-5">
+          <p class="text-sm text-rozet-muted mb-1">مواد اولیه</p>
+          <p class="text-2xl font-bold">۴,۱۷۸,۲۰۰</p>
+        </div>
+        <div class="card p-5">
+          <p class="text-sm text-rozet-muted mb-1">دهانه / فریم</p>
+          <p class="text-2xl font-bold">۶۲۵,۰۰۰</p>
+        </div>
+        <div class="card p-5">
+          <p class="text-sm text-rozet-muted mb-1">عکاسی</p>
+          <p class="text-2xl font-bold">۲,۹۸۰,۰۰۰</p>
+        </div>
+      </div>
+
+      <!-- Categories -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="card p-4">
+          <p class="text-sm text-rozet-muted">مواد اولیه</p>
+          <p class="text-xl font-semibold mt-1">۴,۱۷۸,۲۰۰</p>
+          <p class="text-xs text-rozet-muted mt-1">پارچه، منجوق، پولک، روبان و...</p>
+        </div>
+        <div class="card p-4">
+          <p class="text-sm text-rozet-muted">دهانه فلزی / فریم</p>
+          <p class="text-xl font-semibold mt-1">۶۲۵,۰۰۰</p>
+        </div>
+        <div class="card p-4">
+          <p class="text-sm text-rozet-muted">عکاسی</p>
+          <p class="text-xl font-semibold mt-1">۲,۹۸۰,۰۰۰</p>
+          <p class="text-xs text-rozet-muted mt-1">دوره عکاسی</p>
+        </div>
+        <div class="card p-4 border border-rozet-gold/30">
+          <p class="text-sm text-rozet-muted">جمع کل</p>
+          <p class="text-xl font-semibold gold-text mt-1">۷,۸۷۳,۲۰۰</p>
+        </div>
+      </div>
+
+      <!-- Full list of expenses from the file -->
+      <div class="card overflow-hidden">
+        <div class="p-5 border-b border-[#2A2A2A]">
+          <h3 class="font-semibold">لیست کامل هزینه‌های وارد شده از فایل</h3>
+          <p class="text-xs text-rozet-muted mt-1">از فایل Rozet.xlsx</p>
+        </div>
+        <div class="overflow-x-auto max-h-[420px] overflow-y-auto">
+          <table class="w-full text-sm">
+            <thead class="sticky top-0 bg-[#1A1A1A]">
+              <tr class="border-b border-[#2A2A2A] text-rozet-muted">
+                <th class="text-right py-3 px-5 font-medium">#</th>
+                <th class="text-right py-3 px-4 font-medium">شرح هزینه</th>
+                <th class="text-right py-3 px-4 font-medium">دسته‌بندی</th>
+                <th class="text-right py-3 px-5 font-medium">مبلغ (تومان)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-[#2A2A2A]"><td class="py-2.5 px-5">۱</td><td class="py-2.5 px-4">پارچه</td><td class="py-2.5 px-4"><span class="badge bg-purple-500/15 text-purple-400">مواد اولیه</span></td><td class="py-2.5 px-5 text-red-400">۹۰,۰۰۰</td></tr>
+              <tr class="border-b border-[#2A2A2A]"><td class="py-2.5 px-5">۲</td><td class="py-2.5 px-4">پارچه، ابن سینا</td><td class="py-2.5 px-4"><span class="badge bg-purple-500/15 text-purple-400">مواد اولیه</span></td><td class="py-2.5 px-5 text-red-400">۳۰,۰۰۰</td></tr>
+              <tr class="border-b border-[#2A2A2A]"><td class="py-2.5 px-5">۳</td><td class="py-2.5 px-4">منجوق، ابن سینا</td><td class="py-2.5 px-4"><span class="badge bg-purple-500/15 text-purple-400">مواد اولیه</span></td><td class="py-2.5 px-5 text-red-400">۲۵,۰۰۰</td></tr>
+              <tr class="border-b border-[#2A2A2A]"><td class="py-2.5 px-5">۴</td><td class="py-2.5 px-4">دهانه فلزی، افاق</td><td class="py-2.5 px-4"><span class="badge bg-blue-500/15 text-blue-400">فریم</span></td><td class="py-2.5 px-5 text-red-400">۱۲۰,۰۰۰</td></tr>
+              <tr class="border-b border-[#2A2A2A]"><td class="py-2.5 px-5">۵</td><td class="py-2.5 px-4">پارچه مخمل، ابن سینا</td><td class="py-2.5 px-4"><span class="badge bg-purple-500/15 text-purple-400">مواد اولیه</span></td><td class="py-2.5 px-5 text-red-400">۱۴۰,۰۰۰</td></tr>
+              <tr class="border-b border-[#2A2A2A]"><td class="py-2.5 px-5">۶</td><td class="py-2.5 px-4">روبان و لایی چسب، حسین‌آباد</td><td class="py-2.5 px-4"><span class="badge bg-purple-500/15 text-purple-400">مواد اولیه</span></td><td class="py-2.5 px-5 text-red-400">۷۶,۵۰۰</td></tr>
+              <tr class="border-b border-[#2A2A2A]"><td class="py-2.5 px-5">۷</td><td class="py-2.5 px-4">سوزن ته گرد، وحید</td><td class="py-2.5 px-4"><span class="badge bg-purple-500/15 text-purple-400">مواد اولیه</span></td><td class="py-2.5 px-5 text-red-400">۱۰۵,۰۰۰</td></tr>
+              <tr class="border-b border-[#2A2A2A]"><td class="py-2.5 px-5">۸</td><td class="py-2.5 px-4">دهانه فلزی و روبان، افاق</td><td class="py-2.5 px-4"><span class="badge bg-blue-500/15 text-blue-400">فریم</span></td><td class="py-2.5 px-5 text-red-400">۲۹۰,۰۰۰</td></tr>
+              <tr class="border-b border-[#2A2A2A]"><td class="py-2.5 px-5">۹</td><td class="py-2.5 px-4">پارچه مخمل، حسین‌آباد</td><td class="py-2.5 px-4"><span class="badge bg-purple-500/15 text-purple-400">مواد اولیه</span></td><td class="py-2.5 px-5 text-red-400">۹۹,۰۰۰</td></tr>
+              <tr class="border-b border-[#2A2A2A]"><td class="py-2.5 px-5">۱۰</td><td class="py-2.5 px-4">منجوق و پولک، وحید</td><td class="py-2.5 px-4"><span class="badge bg-purple-500/15 text-purple-400">مواد اولیه</span></td><td class="py-2.5 px-5 text-red-400">۲۹,۰۰۰</td></tr>
+              <tr class="border-b border-[#2A2A2A]"><td class="py-2.5 px-5">۱۱</td><td class="py-2.5 px-4">پولک و منجوق و نخ نامرئی، حسین‌آباد</td><td class="py-2.5 px-4"><span class="badge bg-purple-500/15 text-purple-400">مواد اولیه</span></td><td class="py-2.5 px-5 text-red-400">۶۴,۰۰۰</td></tr>
+              <tr class="border-b border-[#2A2A2A]"><td class="py-2.5 px-5">۱۲</td><td class="py-2.5 px-4">لایی چسب</td><td class="py-2.5 px-4"><span class="badge bg-purple-500/15 text-purple-400">مواد اولیه</span></td><td class="py-2.5 px-5 text-red-400">۲۵,۰۰۰</td></tr>
+              <tr class="border-b border-[#2A2A2A]"><td class="py-2.5 px-5">۱۳</td><td class="py-2.5 px-4">روبان</td><td class="py-2.5 px-4"><span class="badge bg-purple-500/15 text-purple-400">مواد اولیه</span></td><td class="py-2.5 px-5 text-red-400">۹۹,۰۰۰</td></tr>
+              <tr class="border-b border-[#2A2A2A]"><td class="py-2.5 px-5">۱۴</td><td class="py-2.5 px-4">متر</td><td class="py-2.5 px-4"><span class="badge bg-purple-500/15 text-purple-400">مواد اولیه</span></td><td class="py-2.5 px-5 text-red-400">۴۵,۰۰۰</td></tr>
+              <tr class="border-b border-[#2A2A2A]"><td class="py-2.5 px-5">۱۵</td><td class="py-2.5 px-4">پولک، ابن سینا</td><td class="py-2.5 px-4"><span class="badge bg-purple-500/15 text-purple-400">مواد اولیه</span></td><td class="py-2.5 px-5 text-red-400">۲۵,۰۰۰</td></tr>
+              <tr class="border-b border-[#2A2A2A]"><td class="py-2.5 px-5">۱۶</td><td class="py-2.5 px-4">مخمل، ابن سینا</td><td class="py-2.5 px-4"><span class="badge bg-purple-500/15 text-purple-400">مواد اولیه</span></td><td class="py-2.5 px-5 text-red-400">۹۰,۰۰۰</td></tr>
+              <tr class="border-b border-[#2A2A2A]"><td class="py-2.5 px-5">۱۷</td><td class="py-2.5 px-4">مروارید، وحید</td><td class="py-2.5 px-4"><span class="badge bg-purple-500/15 text-purple-400">مواد اولیه</span></td><td class="py-2.5 px-5 text-red-400">۱۲۷,۰۰۰</td></tr>
+              <tr class="border-b border-[#2A2A2A]"><td class="py-2.5 px-5">۱۸</td><td class="py-2.5 px-4">صابون، مادی</td><td class="py-2.5 px-4"><span class="badge bg-purple-500/15 text-purple-400">مواد اولیه</span></td><td class="py-2.5 px-5 text-red-400">۵,۰۰۰</td></tr>
+              <tr class="border-b border-[#2A2A2A]"><td class="py-2.5 px-5">۱۹</td><td class="py-2.5 px-4">پولک و سوزن</td><td class="py-2.5 px-4"><span class="badge bg-purple-500/15 text-purple-400">مواد اولیه</span></td><td class="py-2.5 px-5 text-red-400">۴۳,۰۰۰</td></tr>
+              <tr class="border-b border-[#2A2A2A]"><td class="py-2.5 px-5">۲۰</td><td class="py-2.5 px-4">زانفیکس</td><td class="py-2.5 px-4"><span class="badge bg-purple-500/15 text-purple-400">مواد اولیه</span></td><td class="py-2.5 px-5 text-red-400">۵۹,۰۰۰</td></tr>
+              <tr class="border-b border-[#2A2A2A]"><td class="py-2.5 px-5">۲۱</td><td class="py-2.5 px-4">دهانه فلزی</td><td class="py-2.5 px-4"><span class="badge bg-blue-500/15 text-blue-400">فریم</span></td><td class="py-2.5 px-5 text-red-400">۲۱۵,۰۰۰</td></tr>
+              <tr class="border-b border-[#2A2A2A]"><td class="py-2.5 px-5">۲۲</td><td class="py-2.5 px-4">ابر</td><td class="py-2.5 px-4"><span class="badge bg-purple-500/15 text-purple-400">مواد اولیه</span></td><td class="py-2.5 px-5 text-red-400">۶۰,۰۰۰</td></tr>
+              <tr class="border-b border-[#2A2A2A]"><td class="py-2.5 px-5">۲۳</td><td class="py-2.5 px-4">فوم و چسب</td><td class="py-2.5 px-4"><span class="badge bg-purple-500/15 text-purple-400">مواد اولیه</span></td><td class="py-2.5 px-5 text-red-400">۱۱۸,۷۰۰</td></tr>
+              <tr class="border-b border-[#2A2A2A]"><td class="py-2.5 px-5">۲۴</td><td class="py-2.5 px-4">پولک وحید</td><td class="py-2.5 px-4"><span class="badge bg-purple-500/15 text-purple-400">مواد اولیه</span></td><td class="py-2.5 px-5 text-red-400">۱۰,۰۰۰</td></tr>
+              <tr class="border-b border-[#2A2A2A]"><td class="py-2.5 px-5">۲۵</td><td class="py-2.5 px-4">پولک، سه راه سیمین</td><td class="py-2.5 px-4"><span class="badge bg-purple-500/15 text-purple-400">مواد اولیه</span></td><td class="py-2.5 px-5 text-red-400">۹۹,۰۰۰</td></tr>
+              <tr class="border-b border-[#2A2A2A]"><td class="py-2.5 px-5">۲۶</td><td class="py-2.5 px-4">پولک و جورابگیر و زانفیکس ابن سینا</td><td class="py-2.5 px-4"><span class="badge bg-purple-500/15 text-purple-400">مواد اولیه</span></td><td class="py-2.5 px-5 text-red-400">۳۶۰,۰۰۰</td></tr>
+              <tr class="border-b border-[#2A2A2A]"><td class="py-2.5 px-5">۲۷</td><td class="py-2.5 px-4">منجوق و زانفیکس و کریستال، وحید</td><td class="py-2.5 px-4"><span class="badge bg-purple-500/15 text-purple-400">مواد اولیه</span></td><td class="py-2.5 px-5 text-red-400">۲۵۶,۰۰۰</td></tr>
+              <tr class="border-b border-[#2A2A2A]"><td class="py-2.5 px-5">۲۸</td><td class="py-2.5 px-4">پولک وحید مادی</td><td class="py-2.5 px-4"><span class="badge bg-purple-500/15 text-purple-400">مواد اولیه</span></td><td class="py-2.5 px-5 text-red-400">۶۰,۰۰۰</td></tr>
+              <tr class="border-b border-[#2A2A2A]"><td class="py-2.5 px-5">۲۹</td><td class="py-2.5 px-4">نخ نامرئی وحید مادی</td><td class="py-2.5 px-4"><span class="badge bg-purple-500/15 text-purple-400">مواد اولیه</span></td><td class="py-2.5 px-5 text-red-400">۲۵,۰۰۰</td></tr>
+              <tr class="border-b border-[#2A2A2A]"><td class="py-2.5 px-5">۳۰</td><td class="py-2.5 px-4">پولک و مروارید سبزه میدان</td><td class="py-2.5 px-4"><span class="badge bg-purple-500/15 text-purple-400">مواد اولیه</span></td><td class="py-2.5 px-5 text-red-400">۶۰۰,۰۰۰</td></tr>
+              <tr class="border-b border-[#2A2A2A]"><td class="py-2.5 px-5">۳۱</td><td class="py-2.5 px-4">جورابگیر سبزه میدان</td><td class="py-2.5 px-4"><span class="badge bg-purple-500/15 text-purple-400">مواد اولیه</span></td><td class="py-2.5 px-5 text-red-400">۴۰۰,۰۰۰</td></tr>
+              <tr class="border-b border-[#2A2A2A]"><td class="py-2.5 px-5">۳۲</td><td class="py-2.5 px-4">صابون مدادی</td><td class="py-2.5 px-4"><span class="badge bg-purple-500/15 text-purple-400">مواد اولیه</span></td><td class="py-2.5 px-5 text-red-400">۲۳,۰۰۰</td></tr>
+              <tr class="border-b border-[#2A2A2A]"><td class="py-2.5 px-5">۳۳</td><td class="py-2.5 px-4">دوره عکاسی</td><td class="py-2.5 px-4"><span class="badge bg-pink-500/15 text-pink-400">عکاسی</span></td><td class="py-2.5 px-5 text-red-400">۲,۹۸۰,۰۰۰</td></tr>
+              <tr class="border-b border-[#2A2A2A]"><td class="py-2.5 px-5">۳۴</td><td class="py-2.5 px-4">کاغذ کالک</td><td class="py-2.5 px-4"><span class="badge bg-purple-500/15 text-purple-400">مواد اولیه</span></td><td class="py-2.5 px-5 text-red-400">۱۳۵,۰۰۰</td></tr>
+              <tr class="border-b border-[#2A2A2A]"><td class="py-2.5 px-5">۳۵</td><td class="py-2.5 px-4">پارچه مخمل — ابن سینا</td><td class="py-2.5 px-4"><span class="badge bg-purple-500/15 text-purple-400">مواد اولیه</span></td><td class="py-2.5 px-5 text-red-400">۶۷۵,۰۰۰</td></tr>
+              <tr class="border-b border-[#2A2A2A]"><td class="py-2.5 px-5">۳۶</td><td class="py-2.5 px-4">خودکار حرارتی</td><td class="py-2.5 px-4"><span class="badge bg-purple-500/15 text-purple-400">مواد اولیه</span></td><td class="py-2.5 px-5 text-red-400">۳۰,۰۰۰</td></tr>
+              <tr><td class="py-2.5 px-5">۳۷</td><td class="py-2.5 px-4">نخ نامرئی و لایی چسب ابریشم ارت</td><td class="py-2.5 px-4"><span class="badge bg-purple-500/15 text-purple-400">مواد اولیه</span></td><td class="py-2.5 px-5 text-red-400">۲۴۰,۰۰۰</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="p-4 border-t border-[#2A2A2A] flex justify-between items-center">
+          <span class="text-sm text-rozet-muted">جمع کل از فایل</span>
+          <span class="text-lg font-bold text-red-400">۷,۸۷۳,۲۰۰ تومان</span>
+        </div>
+      </div>
+
+      <div class="card p-5 border border-rozet-gold/20">
+        <h3 class="font-semibold mb-2 gold-text">نکته</h3>
+        <p class="text-sm text-rozet-muted">
+          این هزینه‌ها فعلاً فقط هزینه‌های خرید مواد و عکاسی هستن. هنوز درآمد (فروش) داخل فایل ثبت نشده بود، به همین خاطر سود منفی نشون داده شده بود.
+          به محض اینکه سفارش‌ها و فروش‌ها رو وارد سیستم کنیم، سود واقعی هر محصول و هر سفارش به صورت خودکار محاسبه می‌شه.
+        </p>
+      </div>
+
+    </div>
+  </main>
+</body>
+</html>

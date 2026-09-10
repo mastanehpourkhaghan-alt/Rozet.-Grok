@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROZET — محصولات</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            rozet: {
+              bg: '#0F0F0F',
+              card: '#1A1A1A',
+              border: '#2A2A2A',
+              gold: '#C9A86C',
+              goldLight: '#E8D5A3',
+              burgundy: '#520817',
+              text: '#F5F5F0',
+              muted: '#A0A0A0',
+              success: '#4ADE80',
+              warning: '#FBBF24',
+              danger: '#F87171'
+            }
+          },
+          fontFamily: {
+            sans: ['Vazirmatn', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #0F0F0F;
+      color: #F5F5F0;
+      font-family: 'Vazirmatn', system-ui, sans-serif;
+    }
+    .card {
+      background: #1A1A1A;
+      border: 1px solid #2A2A2A;
+      border-radius: 16px;
+    }
+    .gold-text {
+      color: #C9A86C;
+    }
+    .nav-item.active {
+      background: rgba(82, 8, 23, 0.35);
+      color: #C9A86C;
+      border-right: 3px solid #520817;
+    }
+    .badge {
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 9999px;
+    }
+    .product-card:hover {
+      border-color: #C9A86C;
+      transform: translateY(-2px);
+      transition: all 0.2s ease;
+    }
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0F0F0F;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #333;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex">
+
+  <!-- Sidebar -->
+  <aside class="w-64 bg-[#141414] border-l border-[#2A2A2A] flex flex-col fixed h-full z-20">
+    <div class="p-6 border-b border-[#2A2A2A]">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#C9A86C] to-[#A68B4B] flex items-center justify-center text-black font-bold text-lg">
+          R
+        </div>
+        <div>
+          <h1 class="font-bold text-lg tracking-wide">ROZET</h1>
+          <p class="text-xs text-rozet-muted">Management System</p>
+        </div>
+      </div>
+    </div>
+
+    <nav class="flex-1 p-4 space-y-1">
+      <a href="index.html" class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-rozet-muted hover:bg-[#1F1F1F] hover:text-white transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+        </svg>
+        داشبورد
+      </a>
+      <a href="products.html" class="nav-item active flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+        </svg>
+        محصولات
+      </a>
+      <a href="#" class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-rozet-muted hover:bg-[#1F1F1F] hover:text-white transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+        مشتریان (CRM)
+      </a>
+      <a href="#" class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-rozet-muted hover:bg-[#1F1F1F] hover:text-white transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+        </svg>
+        سفارش‌ها
+      </a>
+      <a href="#" class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-rozet-muted hover:bg-[#1F1F1F] hover:text-white transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        سیستم مالی
+      </a>
+    </nav>
+
+    <div class="p-4 border-t border-[#2A2A2A]">
+      <div class="text-xs text-rozet-muted text-center">
+        نسخه ۱.۰ — Local
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-1 mr-64 min-h-screen">
+    <!-- Top Header -->
+    <header class="sticky top-0 z-10 bg-[#0F0F0F]/90 backdrop-blur-md border-b border-[#2A2A2A] px-8 py-4 flex items-center justify-between">
+      <div>
+        <h2 class="text-xl font-semibold">محصولات</h2>
+        <p class="text-sm text-rozet-muted mt-0.5">مدیریت موجودی و قیمت‌گذاری</p>
+      </div>
+      <button class="flex items-center gap-2 bg-rozet-gold text-black font-medium px-5 py-2.5 rounded-xl hover:bg-[#D4B87A] transition-colors text-sm">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+        </svg>
+        محصول جدید
+      </button>
+    </header>
+
+    <div class="p-8 space-y-6">
+
+      <!-- Filters -->
+      <div class="flex flex-wrap items-center gap-3">
+        <div class="relative">
+          <input type="text" placeholder="جستجوی محصول..." 
+                 class="bg-[#1A1A1A] border border-[#2A2A2A] rounded-xl px-4 py-2.5 pr-10 text-sm w-64 focus:outline-none focus:border-rozet-gold transition-colors" />
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 absolute right-3 top-3.5 text-rozet-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </div>
+        <select class="bg-[#1A1A1A] border border-[#2A2A2A] rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-rozet-gold">
+          <option>همه مجموعه‌ها</option>
+          <option>Winter</option>
+          <option>Classic</option>
+          <option>Mini</option>
+        </select>
+        <select class="bg-[#1A1A1A] border border-[#2A2A2A] rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-rozet-gold">
+          <option>مرتب‌سازی: جدیدترین</option>
+          <option>پرفروش‌ترین</option>
+          <option>پرسودترین</option>
+          <option>کم‌موجودی</option>
+        </select>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
+
+        <!-- Product 1: W01 -->
+        <div class="card product-card p-5">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] flex items-center justify-center text-3xl">
+              👜
+            </div>
+            <span class="badge bg-green-500/15 text-green-400">موجود</span>
+          </div>
+          
+          <h3 class="font-semibold text-lg">ROZET / Winter / W01</h3>
+          <p class="text-sm text-rozet-muted mt-1 mb-4">مجموعه زمستانه</p>
+
+          <div class="space-y-2.5 text-sm">
+            <div class="flex justify-between">
+              <span class="text-rozet-muted">قیمت تمام‌شده</span>
+              <span class="font-medium">۲,۸۰۰,۰۰۰</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-rozet-muted">قیمت فروش</span>
+              <span class="font-medium">۶,۹۰۰,۰۰۰</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-rozet-muted">سود هر عدد</span>
+              <span class="font-medium gold-text">۴,۱۰۰,۰۰۰</span>
+            </div>
+          </div>
+
+          <div class="mt-5 pt-4 border-t border-[#2A2A2A] grid grid-cols-3 gap-2 text-center">
+            <div>
+              <p class="text-lg font-semibold">۳</p>
+              <p class="text-xs text-rozet-muted">موجودی</p>
+            </div>
+            <div>
+              <p class="text-lg font-semibold">۱۰</p>
+              <p class="text-xs text-rozet-muted">تولید</p>
+            </div>
+            <div>
+              <p class="text-lg font-semibold">۷</p>
+              <p class="text-xs text-rozet-muted">فروخته</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2: C03 -->
+        <div class="card product-card p-5">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] flex items-center justify-center text-3xl">
+              👜
+            </div>
+            <span class="badge bg-green-500/15 text-green-400">موجود</span>
+          </div>
+          
+          <h3 class="font-semibold text-lg">ROZET / Classic / C03</h3>
+          <p class="text-sm text-rozet-muted mt-1 mb-4">مجموعه کلاسیک</p>
+
+          <div class="space-y-2.5 text-sm">
+            <div class="flex justify-between">
+              <span class="text-rozet-muted">قیمت تمام‌شده</span>
+              <span class="font-medium">۳,۳۵۰,۰۰۰</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-rozet-muted">قیمت فروش</span>
+              <span class="font-medium">۸,۲۰۰,۰۰۰</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-rozet-muted">سود هر عدد</span>
+              <span class="font-medium gold-text">۴,۸۵۰,۰۰۰</span>
+            </div>
+          </div>
+
+          <div class="mt-5 pt-4 border-t border-[#2A2A2A] grid grid-cols-3 gap-2 text-center">
+            <div>
+              <p class="text-lg font-semibold">۵</p>
+              <p class="text-xs text-rozet-muted">موجودی</p>
+            </div>
+            <div>
+              <p class="text-lg font-semibold">۱۲</p>
+              <p class="text-xs text-rozet-muted">تولید</p>
+            </div>
+            <div>
+              <p class="text-lg font-semibold">۷</p>
+              <p class="text-xs text-rozet-muted">فروخته</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3: M02 -->
+        <div class="card product-card p-5">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] flex items-center justify-center text-3xl">
+              👜
+            </div>
+            <span class="badge bg-amber-500/15 text-amber-400">کم‌موجودی</span>
+          </div>
+          
+          <h3 class="font-semibold text-lg">ROZET / Mini / M02</h3>
+          <p class="text-sm text-rozet-muted mt-1 mb-4">مجموعه مینی</p>
+
+          <div class="space-y-2.5 text-sm">
+            <div class="flex justify-between">
+              <span class="text-rozet-muted">قیمت تمام‌شده</span>
+              <span class="font-medium">۱,۹۵۰,۰۰۰</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-rozet-muted">قیمت فروش</span>
+              <span class="font-medium">۴,۹۰۰,۰۰۰</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-rozet-muted">سود هر عدد</span>
+              <span class="font-medium gold-text">۲,۹۵۰,۰۰۰</span>
+            </div>
+          </div>
+
+          <div class="mt-5 pt-4 border-t border-[#2A2A2A] grid grid-cols-3 gap-2 text-center">
+            <div>
+              <p class="text-lg font-semibold text-amber-400">۱</p>
+              <p class="text-xs text-rozet-muted">موجودی</p>
+            </div>
+            <div>
+              <p class="text-lg font-semibold">۸</p>
+              <p class="text-xs text-rozet-muted">تولید</p>
+            </div>
+            <div>
+              <p class="text-lg font-semibold">۷</p>
+              <p class="text-xs text-rozet-muted">فروخته</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4: W02 -->
+        <div class="card product-card p-5">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] flex items-center justify-center text-3xl">
+              👜
+            </div>
+            <span class="badge bg-green-500/15 text-green-400">موجود</span>
+          </div>
+          
+          <h3 class="font-semibold text-lg">ROZET / Winter / W02</h3>
+          <p class="text-sm text-rozet-muted mt-1 mb-4">مجموعه زمستانه</p>
+
+          <div class="space-y-2.5 text-sm">
+            <div class="flex justify-between">
+              <span class="text-rozet-muted">قیمت تمام‌شده</span>
+              <span class="font-medium">۳,۱۰۰,۰۰۰</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-rozet-muted">قیمت فروش</span>
+              <span class="font-medium">۷,۵۰۰,۰۰۰</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-rozet-muted">سود هر عدد</span>
+              <span class="font-medium gold-text">۴,۴۰۰,۰۰۰</span>
+            </div>
+          </div>
+
+          <div class="mt-5 pt-4 border-t border-[#2A2A2A] grid grid-cols-3 gap-2 text-center">
+            <div>
+              <p class="text-lg font-semibold">۴</p>
+              <p class="text-xs text-rozet-muted">موجودی</p>
+            </div>
+            <div>
+              <p class="text-lg font-semibold">۶</p>
+              <p class="text-xs text-rozet-muted">تولید</p>
+            </div>
+            <div>
+              <p class="text-lg font-semibold">۲</p>
+              <p class="text-xs text-rozet-muted">فروخته</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 5: C01 -->
+        <div class="card product-card p-5">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] flex items-center justify-center text-3xl">
+              👜
+            </div>
+            <span class="badge bg-red-500/15 text-red-400">ناموجود</span>
+          </div>
+          
+          <h3 class="font-semibold text-lg">ROZET / Classic / C01</h3>
+          <p class="text-sm text-rozet-muted mt-1 mb-4">مجموعه کلاسیک</p>
+
+          <div class="space-y-2.5 text-sm">
+            <div class="flex justify-between">
+              <span class="text-rozet-muted">قیمت تمام‌شده</span>
+              <span class="font-medium">۲,۹۵۰,۰۰۰</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-rozet-muted">قیمت فروش</span>
+              <span class="font-medium">۷,۲۰۰,۰۰۰</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-rozet-muted">سود هر عدد</span>
+              <span class="font-medium gold-text">۴,۲۵۰,۰۰۰</span>
+            </div>
+          </div>
+
+          <div class="mt-5 pt-4 border-t border-[#2A2A2A] grid grid-cols-3 gap-2 text-center">
+            <div>
+              <p class="text-lg font-semibold text-red-400">۰</p>
+              <p class="text-xs text-rozet-muted">موجودی</p>
+            </div>
+            <div>
+              <p class="text-lg font-semibold">۱۰</p>
+              <p class="text-xs text-rozet-muted">تولید</p>
+            </div>
+            <div>
+              <p class="text-lg font-semibold">۱۰</p>
+              <p class="text-xs text-rozet-muted">فروخته</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 6: M01 -->
+        <div class="card product-card p-5">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] flex items-center justify-center text-3xl">
+              👜
+            </div>
+            <span class="badge bg-green-500/15 text-green-400">موجود</span>
+          </div>
+          
+          <h3 class="font-semibold text-lg">ROZET / Mini / M01</h3>
+          <p class="text-sm text-rozet-muted mt-1 mb-4">مجموعه مینی</p>
+
+          <div class="space-y-2.5 text-sm">
+            <div class="flex justify-between">
+              <span class="text-rozet-muted">قیمت تمام‌شده</span>
+              <span class="font-medium">۱,۸۰۰,۰۰۰</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-rozet-muted">قیمت فروش</span>
+              <span class="font-medium">۴,۵۰۰,۰۰۰</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-rozet-muted">سود هر عدد</span>
+              <span class="font-medium gold-text">۲,۷۰۰,۰۰۰</span>
+            </div>
+          </div>
+
+          <div class="mt-5 pt-4 border-t border-[#2A2A2A] grid grid-cols-3 gap-2 text-center">
+            <div>
+              <p class="text-lg font-semibold">۶</p>
+              <p class="text-xs text-rozet-muted">موجودی</p>
+            </div>
+            <div>
+              <p class="text-lg font-semibold">۹</p>
+              <p class="text-xs text-rozet-muted">تولید</p>
+            </div>
+            <div>
+              <p class="text-lg font-semibold">۳</p>
+              <p class="text-xs text-rozet-muted">فروخته</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

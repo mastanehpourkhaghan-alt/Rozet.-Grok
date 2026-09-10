@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROZET — مشتریان (CRM)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            rozet: {
+              bg: '#0F0F0F',
+              card: '#1A1A1A',
+              border: '#2A2A2A',
+              gold: '#C9A86C',
+              goldLight: '#E8D5A3',
+              burgundy: '#520817',
+              text: '#F5F5F0',
+              muted: '#A0A0A0',
+              success: '#4ADE80',
+              warning: '#FBBF24',
+              danger: '#F87171'
+            }
+          },
+          fontFamily: {
+            sans: ['Vazirmatn', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #0F0F0F;
+      color: #F5F5F0;
+      font-family: 'Vazirmatn', system-ui, sans-serif;
+    }
+    .card {
+      background: #1A1A1A;
+      border: 1px solid #2A2A2A;
+      border-radius: 16px;
+    }
+    .gold-text { color: #C9A86C; }
+    .nav-item.active {
+      background: rgba(82, 8, 23, 0.35);
+      color: #C9A86C;
+      border-right: 3px solid #520817;
+    }
+    .badge {
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 9999px;
+    }
+    .customer-row:hover {
+      background: #1F1F1F;
+    }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0F0F0F; }
+    ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+  </style>
+</head>
+<body class="min-h-screen flex">
+
+  <!-- Sidebar -->
+  <aside class="w-64 bg-[#141414] border-l border-[#2A2A2A] flex flex-col fixed h-full z-20">
+    <div class="p-6 border-b border-[#2A2A2A]">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#C9A86C] to-[#A68B4B] flex items-center justify-center text-black font-bold text-lg">R</div>
+        <div>
+          <h1 class="font-bold text-lg tracking-wide">ROZET</h1>
+          <p class="text-xs text-rozet-muted">Management System</p>
+        </div>
+      </div>
+    </div>
+
+    <nav class="flex-1 p-4 space-y-1">
+      <a href="index.html" class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-rozet-muted hover:bg-[#1F1F1F] hover:text-white transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+        داشبورد
+      </a>
+      <a href="products.html" class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-rozet-muted hover:bg-[#1F1F1F] hover:text-white transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>
+        محصولات
+      </a>
+      <a href="crm.html" class="nav-item active flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+        مشتریان (CRM)
+      </a>
+      <a href="#" class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-rozet-muted hover:bg-[#1F1F1F] hover:text-white transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" /></svg>
+        سفارش‌ها
+      </a>
+      <a href="#" class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-rozet-muted hover:bg-[#1F1F1F] hover:text-white transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+        سیستم مالی
+      </a>
+    </nav>
+
+    <div class="p-4 border-t border-[#2A2A2A]">
+      <div class="text-xs text-rozet-muted text-center">نسخه ۱.۰ — Local</div>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main class="flex-1 mr-64 min-h-screen">
+    <header class="sticky top-0 z-10 bg-[#0F0F0F]/90 backdrop-blur-md border-b border-[#2A2A2A] px-8 py-4 flex items-center justify-between">
+      <div>
+        <h2 class="text-xl font-semibold">مشتریان (CRM)</h2>
+        <p class="text-sm text-rozet-muted mt-0.5">مشتری نهایی + بوتیک‌های کشورهای عربی</p>
+      </div>
+      <button class="flex items-center gap-2 bg-rozet-gold text-black font-medium px-5 py-2.5 rounded-xl hover:bg-[#D4B87A] transition-colors text-sm">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" /></svg>
+        مشتری / بوتیک جدید
+      </button>
+    </header>
+
+    <div class="p-8 space-y-6">
+
+      <!-- Today Follow-up Alert -->
+      <div class="card p-5 flex items-center gap-4 border-r-4" style="border-color: #520817;">
+        <div class="w-12 h-12 rounded-full flex items-center justify-center text-2xl" style="background: rgba(82,8,23,0.3);">🔔</div>
+        <div class="flex-1">
+          <p class="font-medium text-lg">امروز <span class="gold-text font-bold">۴ مورد</span> باید پیگیری شوند</p>
+          <p class="text-sm text-rozet-muted mt-1">۲ بوتیک (دبی + ریاض) • ۲ مشتری نهایی</p>
+        </div>
+        <button class="text-sm gold-text font-medium hover:underline px-4 py-2 rounded-lg hover:bg-[#1F1F1F]">مشاهده و پیگیری</button>
+      </div>
+
+      <!-- Filters -->
+      <div class="flex flex-wrap items-center gap-3">
+        <div class="relative">
+          <input type="text" placeholder="جستجوی نام، بوتیک، کشور..." 
+                 class="bg-[#1A1A1A] border border-[#2A2A2A] rounded-xl px-4 py-2.5 pr-10 text-sm w-64 focus:outline-none focus:border-rozet-gold transition-colors" />
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 absolute right-3 top-3.5 text-rozet-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+        </div>
+        <select class="bg-[#1A1A1A] border border-[#2A2A2A] rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-rozet-gold">
+          <option>همه انواع</option>
+          <option>بوتیک / فروشگاه</option>
+          <option>مشتری نهایی</option>
+        </select>
+        <select class="bg-[#1A1A1A] border border-[#2A2A2A] rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-rozet-gold">
+          <option>همه کشورها</option>
+          <option>امارات</option>
+          <option>عربستان</option>
+          <option>قطر</option>
+          <option>کویت</option>
+          <option>بحرین</option>
+          <option>عمان</option>
+          <option>ایران</option>
+        </select>
+        <select class="bg-[#1A1A1A] border border-[#2A2A2A] rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-rozet-gold">
+          <option>همه مراحل</option>
+          <option>ایمیل اولیه ارسال شد</option>
+          <option>پاسخ دریافت شد</option>
+          <option>در حال مذاکره</option>
+          <option>نمونه ارسال شد</option>
+          <option>در انتظار قرارداد</option>
+          <option>همکاری فعال</option>
+          <option>رد شده / متوقف</option>
+        </select>
+      </div>
+
+      <!-- Customers / Boutiques List -->
+      <div class="card overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-[#2A2A2A] text-rozet-muted">
+                <th class="text-right py-4 px-5 font-medium">نام / بوتیک</th>
+                <th class="text-right py-4 px-3 font-medium">نوع</th>
+                <th class="text-right py-4 px-3 font-medium">کشور</th>
+                <th class="text-right py-4 px-3 font-medium">مرحله مذاکره</th>
+                <th class="text-right py-4 px-3 font-medium">آخرین ارتباط</th>
+                <th class="text-right py-4 px-3 font-medium">پیگیری بعدی</th>
+                <th class="text-right py-4 px-5 font-medium">عملیات</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <!-- Boutique 1 - Dubai -->
+              <tr class="customer-row border-b border-[#2A2A2A] transition-colors">
+                <td class="py-4 px-5">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-[#2A2A2A] flex items-center justify-center text-sm font-medium gold-text">L</div>
+                    <div>
+                      <p class="font-medium">Luxe Atelier Dubai</p>
+                      <p class="text-xs text-rozet-muted">شخص رابط: Sara Al-Maktoum</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="py-4 px-3"><span class="badge" style="background:rgba(82,8,23,0.3);color:#C9A86C">بوتیک</span></td>
+                <td class="py-4 px-3">امارات 🇦🇪</td>
+                <td class="py-4 px-3"><span class="badge bg-blue-500/15 text-blue-400">در حال مذاکره</span></td>
+                <td class="py-4 px-3">
+                  <p class="text-xs">ایمیل زدم — ۹ شهریور</p>
+                  <p class="text-xs text-green-400">پاسخ دادند — ۱۰ شهریور</p>
+                </td>
+                <td class="py-4 px-3"><span class="badge bg-red-500/15 text-red-400">امروز</span></td>
+                <td class="py-4 px-5"><button class="text-xs gold-text hover:underline">جزئیات + لاگ</button></td>
+              </tr>
+
+              <!-- Boutique 2 - Riyadh -->
+              <tr class="customer-row border-b border-[#2A2A2A] transition-colors">
+                <td class="py-4 px-5">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-[#2A2A2A] flex items-center justify-center text-sm font-medium gold-text">N</div>
+                    <div>
+                      <p class="font-medium">Noor Boutique</p>
+                      <p class="text-xs text-rozet-muted">شخص رابط: Fatima Al-Saud</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="py-4 px-3"><span class="badge" style="background:rgba(82,8,23,0.3);color:#C9A86C">بوتیک</span></td>
+                <td class="py-4 px-3">عربستان 🇸🇦</td>
+                <td class="py-4 px-3"><span class="badge bg-amber-500/15 text-amber-400">ایمیل اولیه ارسال شد</span></td>
+                <td class="py-4 px-3">
+                  <p class="text-xs">ایمیل زدم — ۸ شهریور</p>
+                  <p class="text-xs text-rozet-muted">هنوز پاسخی نیامده</p>
+                </td>
+                <td class="py-4 px-3"><span class="badge bg-red-500/15 text-red-400">امروز</span></td>
+                <td class="py-4 px-5"><button class="text-xs gold-text hover:underline">جزئیات + لاگ</button></td>
+              </tr>
+
+              <!-- Boutique 3 - Doha -->
+              <tr class="customer-row border-b border-[#2A2A2A] transition-colors">
+                <td class="py-4 px-5">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-[#2A2A2A] flex items-center justify-center text-sm font-medium gold-text">Q</div>
+                    <div>
+                      <p class="font-medium">Qatar Style House</p>
+                      <p class="text-xs text-rozet-muted">شخص رابط: Aisha Al-Thani</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="py-4 px-3"><span class="badge" style="background:rgba(82,8,23,0.3);color:#C9A86C">بوتیک</span></td>
+                <td class="py-4 px-3">قطر 🇶🇦</td>
+                <td class="py-4 px-3"><span class="badge bg-purple-500/15 text-purple-400">نمونه ارسال شد</span></td>
+                <td class="py-4 px-3">
+                  <p class="text-xs">نمونه فرستادم — ۵ شهریور</p>
+                  <p class="text-xs text-green-400">تأیید دریافت — ۷ شهریور</p>
+                </td>
+                <td class="py-4 px-3"><span class="text-xs text-rozet-muted">۱۳ شهریور</span></td>
+                <td class="py-4 px-5"><button class="text-xs gold-text hover:underline">جزئیات + لاگ</button></td>
+              </tr>
+
+              <!-- Boutique 4 - Kuwait -->
+              <tr class="customer-row border-b border-[#2A2A2A] transition-colors">
+                <td class="py-4 px-5">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-[#2A2A2A] flex items-center justify-center text-sm font-medium gold-text">K</div>
+                    <div>
+                      <p class="font-medium">Kuwait Luxury Bags</p>
+                      <p class="text-xs text-rozet-muted">شخص رابط: Mona Al-Sabah</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="py-4 px-3"><span class="badge" style="background:rgba(82,8,23,0.3);color:#C9A86C">بوتیک</span></td>
+                <td class="py-4 px-3">کویت 🇰🇼</td>
+                <td class="py-4 px-3"><span class="badge bg-green-500/15 text-green-400">همکاری فعال</span></td>
+                <td class="py-4 px-3">
+                  <p class="text-xs">سفارش جدید — ۲ شهریور</p>
+                  <p class="text-xs text-green-400">پرداخت شد</p>
+                </td>
+                <td class="py-4 px-3"><span class="text-xs text-rozet-muted">۲۰ شهریور</span></td>
+                <td class="py-4 px-5"><button class="text-xs gold-text hover:underline">جزئیات + لاگ</button></td>
+              </tr>
+
+              <!-- Retail Customer 1 -->
+              <tr class="customer-row border-b border-[#2A2A2A] transition-colors">
+                <td class="py-4 px-5">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-[#2A2A2A] flex items-center justify-center text-sm font-medium gold-text">س</div>
+                    <div>
+                      <p class="font-medium">سارا محمدی</p>
+                      <p class="text-xs text-rozet-muted">@sara.mohammadi</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="py-4 px-3"><span class="badge bg-gray-500/20 text-gray-300">نهایی</span></td>
+                <td class="py-4 px-3">ایران 🇮🇷</td>
+                <td class="py-4 px-3"><span class="badge bg-amber-500/15 text-amber-400">آماده خرید</span></td>
+                <td class="py-4 px-3">
+                  <p class="text-xs">پیام دایرکت — دیروز</p>
+                </td>
+                <td class="py-4 px-3"><span class="badge bg-red-500/15 text-red-400">امروز</span></td>
+                <td class="py-4 px-5"><button class="text-xs gold-text hover:underline">جزئیات + لاگ</button></td>
+              </tr>
+
+              <!-- Retail Customer 2 -->
+              <tr class="customer-row border-b border-[#2A2A2A] transition-colors">
+                <td class="py-4 px-5">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-[#2A2A2A] flex items-center justify-center text-sm font-medium gold-text">ن</div>
+                    <div>
+                      <p class="font-medium">نازنین احمدی</p>
+                      <p class="text-xs text-rozet-muted">@nazanin.ah</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="py-4 px-3"><span class="badge bg-gray-500/20 text-gray-300">نهایی</span></td>
+                <td class="py-4 px-3">ایران 🇮🇷</td>
+                <td class="py-4 px-3"><span class="badge bg-blue-500/15 text-blue-400">در حال مذاکره</span></td>
+                <td class="py-4 px-3">
+                  <p class="text-xs">تماس تلفنی — ۹ شهریور</p>
+                </td>
+                <td class="py-4 px-3"><span class="badge bg-red-500/15 text-red-400">امروز</span></td>
+                <td class="py-4 px-5"><button class="text-xs gold-text hover:underline">جزئیات + لاگ</button></td>
+              </tr>
+
+              <!-- Boutique 5 - Bahrain -->
+              <tr class="customer-row transition-colors">
+                <td class="py-4 px-5">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-[#2A2A2A] flex items-center justify-center text-sm font-medium gold-text">B</div>
+                    <div>
+                      <p class="font-medium">Bahrain Chic</p>
+                      <p class="text-xs text-rozet-muted">شخص رابط: Layla Al-Khalifa</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="py-4 px-3"><span class="badge" style="background:rgba(82,8,23,0.3);color:#C9A86C">بوتیک</span></td>
+                <td class="py-4 px-3">بحرین 🇧🇭</td>
+                <td class="py-4 px-3"><span class="badge bg-gray-500/20 text-gray-400">ایمیل اولیه ارسال شد</span></td>
+                <td class="py-4 px-3">
+                  <p class="text-xs">ایمیل زدم — ۶ شهریور</p>
+                  <p class="text-xs text-rozet-muted">بدون پاسخ</p>
+                </td>
+                <td class="py-4 px-3"><span class="text-xs text-rozet-muted">۱۱ شهریور</span></td>
+                <td class="py-4 px-5"><button class="text-xs gold-text hover:underline">جزئیات + لاگ</button></td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="text-sm text-rozet-muted text-center pt-2">
+        با کلیک روی «جزئیات + لاگ» صفحه کامل هر بوتیک/مشتری باز می‌شود که شامل تاریخچه کامل ایمیل‌ها، تماس‌ها و یادداشت‌هاست.
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>

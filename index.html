@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROZET — داشبورد</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            rozet: {
+              bg: '#0F0F0F',
+              card: '#1A1A1A',
+              border: '#2A2A2A',
+              gold: '#C9A86C',
+              goldLight: '#E8D5A3',
+              burgundy: '#520817',
+              text: '#F5F5F0',
+              muted: '#A0A0A0',
+              success: '#4ADE80',
+              warning: '#FBBF24',
+              danger: '#F87171'
+            }
+          },
+          fontFamily: {
+            sans: ['Vazirmatn', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #0F0F0F;
+      color: #F5F5F0;
+      font-family: 'Vazirmatn', system-ui, sans-serif;
+    }
+    .card {
+      background: #1A1A1A;
+      border: 1px solid #2A2A2A;
+      border-radius: 16px;
+    }
+    .gold-text {
+      color: #C9A86C;
+    }
+    .gold-border {
+      border-color: #C9A86C;
+    }
+    .stat-card:hover {
+      border-color: #C9A86C;
+      transition: all 0.2s ease;
+    }
+    .nav-item.active {
+      background: rgba(82, 8, 23, 0.35);
+      color: #C9A86C;
+      border-right: 3px solid #520817;
+    }
+    .badge {
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 9999px;
+    }
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0F0F0F;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #333;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex">
+
+  <!-- Sidebar -->
+  <aside class="w-64 bg-[#141414] border-l border-[#2A2A2A] flex flex-col fixed h-full z-20">
+    <div class="p-6 border-b border-[#2A2A2A]">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#C9A86C] to-[#A68B4B] flex items-center justify-center text-black font-bold text-lg">
+          R
+        </div>
+        <div>
+          <h1 class="font-bold text-lg tracking-wide">ROZET</h1>
+          <p class="text-xs text-rozet-muted">Management System</p>
+        </div>
+      </div>
+    </div>
+
+    <nav class="flex-1 p-4 space-y-1">
+      <a href="index.html" class="nav-item active flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+        </svg>
+        داشبورد
+      </a>
+      <a href="products.html" class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-rozet-muted hover:bg-[#1F1F1F] hover:text-white transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+        </svg>
+        محصولات
+      </a>
+      <a href="#" class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-rozet-muted hover:bg-[#1F1F1F] hover:text-white transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+        مشتریان (CRM)
+      </a>
+      <a href="#" class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-rozet-muted hover:bg-[#1F1F1F] hover:text-white transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+        </svg>
+        سفارش‌ها
+      </a>
+      <a href="#" class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-rozet-muted hover:bg-[#1F1F1F] hover:text-white transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        سیستم مالی
+      </a>
+    </nav>
+
+    <div class="p-4 border-t border-[#2A2A2A]">
+      <div class="text-xs text-rozet-muted text-center">
+        نسخه ۱.۰ — Local
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-1 mr-64 min-h-screen">
+    <!-- Top Header -->
+    <header class="sticky top-0 z-10 bg-[#0F0F0F]/90 backdrop-blur-md border-b border-[#2A2A2A] px-8 py-4 flex items-center justify-between">
+      <div>
+        <h2 class="text-xl font-semibold">داشبورد</h2>
+        <p class="text-sm text-rozet-muted mt-0.5">پنجشنبه ۱۰ شهریور ۱۴۰۵</p>
+      </div>
+      <div class="flex items-center gap-4">
+        <button class="relative p-2 rounded-xl hover:bg-[#1F1F1F] transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-rozet-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+          </svg>
+          <span class="absolute top-1.5 left-1.5 w-2.5 h-2.5 bg-rozet-gold rounded-full"></span>
+        </button>
+        <div class="w-9 h-9 rounded-full bg-[#2A2A2A] flex items-center justify-center text-sm font-medium gold-text">
+          ا
+        </div>
+      </div>
+    </header>
+
+    <div class="p-8 space-y-8">
+
+      <!-- Alert Banner -->
+      <div class="card p-4 flex items-center gap-4 border-r-4 border-rozet-gold">
+        <div class="w-10 h-10 rounded-full bg-[#C9A86C]/15 flex items-center justify-center">
+          <span class="text-xl">🔔</span>
+        </div>
+        <div class="flex-1">
+          <p class="font-medium">امروز <span class="gold-text font-bold">۳ مشتری</span> باید پیگیری شوند</p>
+          <p class="text-sm text-rozet-muted mt-0.5">سارا محمدی • نازنین احمدی • رضا کریمی</p>
+        </div>
+        <button class="text-sm gold-text font-medium hover:underline">مشاهده همه</button>
+      </div>
+
+      <!-- Stats Grid -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- فروش امروز -->
+        <div class="card p-5 stat-card">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-sm text-rozet-muted">فروش امروز</span>
+            <span class="text-xs badge bg-green-500/10 text-green-400">+۱۲٪</span>
+          </div>
+          <p class="text-2xl font-bold tracking-tight">۲۴,۸۰۰,۰۰۰</p>
+          <p class="text-xs text-rozet-muted mt-1">تومان</p>
+        </div>
+
+        <!-- فروش این ماه -->
+        <div class="card p-5 stat-card">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-sm text-rozet-muted">فروش این ماه</span>
+            <span class="text-xs badge bg-green-500/10 text-green-400">+۸٪</span>
+          </div>
+          <p class="text-2xl font-bold tracking-tight">۱۸۶,۴۰۰,۰۰۰</p>
+          <p class="text-xs text-rozet-muted mt-1">تومان</p>
+        </div>
+
+        <!-- سود خالص ماه -->
+        <div class="card p-5 stat-card">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-sm text-rozet-muted">سود خالص ماه</span>
+            <span class="text-xs badge bg-rozet-gold/20 text-rozet-gold">واقعی</span>
+          </div>
+          <p class="text-2xl font-bold tracking-tight gold-text">۹۲,۱۵۰,۰۰۰</p>
+          <p class="text-xs text-rozet-muted mt-1">تومان</p>
+        </div>
+
+        <!-- سفارش‌های در انتظار -->
+        <div class="card p-5 stat-card">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-sm text-rozet-muted">سفارش در انتظار</span>
+            <span class="text-xs badge bg-amber-500/10 text-amber-400">نیاز به اقدام</span>
+          </div>
+          <p class="text-2xl font-bold tracking-tight">۷</p>
+          <p class="text-xs text-rozet-muted mt-1">سفارش</p>
+        </div>
+      </div>
+
+      <!-- Second Stats Row -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="card p-5">
+          <p class="text-sm text-rozet-muted mb-1">کل فروش</p>
+          <p class="text-xl font-semibold">۱,۲۴۸,۰۰۰,۰۰۰</p>
+        </div>
+        <div class="card p-5">
+          <p class="text-sm text-rozet-muted mb-1">هزینه‌های ماه</p>
+          <p class="text-xl font-semibold text-red-400">۴۱,۲۰۰,۰۰۰</p>
+        </div>
+        <div class="card p-5">
+          <p class="text-sm text-rozet-muted mb-1">مشتری جدید این ماه</p>
+          <p class="text-xl font-semibold">۱۸</p>
+        </div>
+        <div class="card p-5">
+          <p class="text-sm text-rozet-muted mb-1">موجودی سرمایه</p>
+          <p class="text-xl font-semibold">۳۱۲,۵۰۰,۰۰۰</p>
+        </div>
+      </div>
+
+      <!-- Two Columns: Top Products + Recent -->
+      <div class="grid lg:grid-cols-2 gap-6">
+
+        <!-- پرفروش‌ترین و پرسودترین -->
+        <div class="card p-6">
+          <h3 class="font-semibold mb-5 flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-rozet-gold"></span>
+            محصولات برتر
+          </h3>
+
+          <div class="space-y-4">
+            <!-- پرفروش -->
+            <div class="flex items-center gap-4 p-4 rounded-xl bg-[#141414] border border-[#2A2A2A]">
+              <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] flex items-center justify-center text-2xl">
+                👜
+              </div>
+              <div class="flex-1">
+                <div class="flex items-center gap-2">
+                  <span class="text-xs badge bg-rozet-gold/20 text-rozet-gold">پرفروش‌ترین</span>
+                </div>
+                <p class="font-medium mt-1">ROZET / Winter / W01</p>
+                <p class="text-sm text-rozet-muted">۷ عدد فروخته شده</p>
+              </div>
+              <div class="text-left">
+                <p class="font-semibold">۶,۹۰۰,۰۰۰</p>
+                <p class="text-xs text-rozet-muted">قیمت فروش</p>
+              </div>
+            </div>
+
+            <!-- پرسود -->
+            <div class="flex items-center gap-4 p-4 rounded-xl bg-[#141414] border border-[#2A2A2A]">
+              <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] flex items-center justify-center text-2xl">
+                👜
+              </div>
+              <div class="flex-1">
+                <div class="flex items-center gap-2">
+                  <span class="text-xs badge bg-green-500/15 text-green-400">پرسودترین</span>
+                </div>
+                <p class="font-medium mt-1">ROZET / Classic / C03</p>
+                <p class="text-sm text-rozet-muted">سود هر عدد: ۴,۸۵۰,۰۰۰</p>
+              </div>
+              <div class="text-left">
+                <p class="font-semibold gold-text">۴,۸۵۰,۰۰۰</p>
+                <p class="text-xs text-rozet-muted">سود خالص</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- آخرین سفارش‌ها -->
+        <div class="card p-6">
+          <div class="flex items-center justify-between mb-5">
+            <h3 class="font-semibold flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-rozet-gold"></span>
+              آخرین سفارش‌ها
+            </h3>
+            <a href="#" class="text-sm gold-text hover:underline">همه</a>
+          </div>
+
+          <div class="space-y-3">
+            <div class="flex items-center justify-between py-3 border-b border-[#2A2A2A] last:border-0">
+              <div>
+                <p class="font-medium text-sm">#۱۰۴۲ — سارا محمدی</p>
+                <p class="text-xs text-rozet-muted mt-0.5">Winter / W01 × ۱</p>
+              </div>
+              <div class="text-left">
+                <p class="text-sm font-medium">۶,۹۰۰,۰۰۰</p>
+                <span class="text-xs badge bg-amber-500/15 text-amber-400">در حال آماده‌سازی</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between py-3 border-b border-[#2A2A2A] last:border-0">
+              <div>
+                <p class="font-medium text-sm">#۱۰۴۱ — نازنین احمدی</p>
+                <p class="text-xs text-rozet-muted mt-0.5">Classic / C03 × ۱</p>
+              </div>
+              <div class="text-left">
+                <p class="text-sm font-medium">۸,۲۰۰,۰۰۰</p>
+                <span class="text-xs badge bg-green-500/15 text-green-400">ارسال شده</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between py-3 border-b border-[#2A2A2A] last:border-0">
+              <div>
+                <p class="font-medium text-sm">#۱۰۴۰ — رضا کریمی</p>
+                <p class="text-xs text-rozet-muted mt-0.5">Mini / M02 × ۲</p>
+              </div>
+              <div class="text-left">
+                <p class="text-sm font-medium">۹,۸۰۰,۰۰۰</p>
+                <span class="text-xs badge bg-blue-500/15 text-blue-400">پرداخت شده</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>
